@@ -2,12 +2,9 @@ description: >
   Generate TechDocs and upload to S3
 # What will this job do?
 
-executor: << parameters.executor >>
+executor: default
 
 parameters:
-  executor:
-    default: default
-    description: Which executor to use
   directory:
     type: string
     default: .
@@ -33,10 +30,7 @@ steps:
   - upload:
       s3_bucket: << parameters.techdocs_bucket >>
       namespace: << parameters.namespace >>
-      kind: << parameters.kind >>
-      name: << parameters.name >>
-      requires:
-        - generate
-
+      entity_kind: << parameters.entity_kind >>
+      entity_name: << parameters.entity_name >>
 
 

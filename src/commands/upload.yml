@@ -19,4 +19,4 @@ steps:
   - s3/sync:
       from: site
       to: >-
-        s3://<< parameters.s3_bucket >>/<< parameters.namespace >>/<< parameters.kind >>/<< parameters.name >>
+        s3://<< parameters.s3_bucket >>/<< parameters.namespace >>/<< parameters.entity_kind >>/<< parameters.entity_name >>
