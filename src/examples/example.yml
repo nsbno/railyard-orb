@@ -6,7 +6,7 @@ usage:
   version: 2.1
 
   orbs:
-    railyard: vydev/railyard-orb@1.0.0
+    railyard: vydev/railyard@1.0.0
 
   workflows:
     build:
