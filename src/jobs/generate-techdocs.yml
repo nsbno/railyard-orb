@@ -1,6 +1,5 @@
 description: >
   Generate TechDocs and upload to S3
-# What will this job do?
 
 executor: default
 
@@ -32,5 +31,3 @@ steps:
       namespace: << parameters.namespace >>
       entity_kind: << parameters.entity_kind >>
       entity_name: << parameters.entity_name >>
-
-
