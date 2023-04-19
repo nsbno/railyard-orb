@@ -1,8 +1,8 @@
 version: 2.1
 
 description: >
-  Generate TechDocs for your application
-# What will your orb allow users to accomplish?
+  Build technical documentation for your application and publish it
+  to a S3 bucket.
 # Descriptions should be short, simple, and informative.
 
 # This information will be displayed in the orb registry and is not mandatory.

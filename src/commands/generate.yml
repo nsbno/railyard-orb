@@ -10,6 +10,7 @@ parameters:
 steps:
   - checkout
   - run:
+      name: Build mkdocs
       command: cd << parameters.directory >> && mkdocs build
   - persist_to_workspace:
       paths:
