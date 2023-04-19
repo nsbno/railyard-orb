@@ -1,0 +1,16 @@
+description: |
+  A workflow where we build and upload
+  TechDocs to S3
+
+usage:
+  version: 2.1
+
+  orbs:
+    railyard: vydev/railyard-orb@1.0.0
+
+  workflows:
+    build:
+      jobs:
+        - railyard/generate-techdocs:
+            techdocs_bucket: 1234512345-techdocs_bucket
+            entity_name: example
