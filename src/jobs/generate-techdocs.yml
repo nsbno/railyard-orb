@@ -1,0 +1,42 @@
+description: >
+  Generate TechDocs and upload to S3
+# What will this job do?
+
+executor: << parameters.executor >>
+
+parameters:
+  executor:
+    default: default
+    description: Which executor to use
+  directory:
+    type: string
+    default: .
+    description: The directory containing mkdocs.yml
+  techdocs_bucket:
+    type: string
+    description: Name of the S3 bucket to upload to
+  namespace:
+    type: string
+    default: default
+    description: namespace
+  entity_kind:
+    type: string
+    default: component
+    description: kind
+  entity_name:
+    type: string
+    description: Name
+steps:
+  - checkout
+  - generate:
+      directory: << parameters.directory >>
+  - upload:
+      s3_bucket: << parameters.techdocs_bucket >>
+      namespace: << parameters.namespace >>
+      kind: << parameters.kind >>
+      name: << parameters.name >>
+      requires:
+        - generate
+
+
+

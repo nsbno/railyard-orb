@@ -1,0 +1,22 @@
+description: Upload TechDocs site to S3
+parameters:
+  s3_bucket:
+    type: string
+  namespace:
+    type: string
+    default: default
+    description: namespace
+  entity_kind:
+    type: string
+    default: component
+    description: kind
+  entity_name:
+    type: string
+    description: Name
+steps:
+  - attach_workspace:
+      at: .
+  - s3/sync:
+      from: site
+      to: >-
+        s3://<< parameters.s3_bucket >>/<< parameters.namespace >>/<< parameters.kind >>/<< parameters.name >>

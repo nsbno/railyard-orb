@@ -1,0 +1,14 @@
+description: >
+  A CircleCI executor running the TechDocs container used by Backstage
+docker:
+  - auth:
+      password: ${DOCKERHUB_PASSWORD}
+      username: ${DOCKERHUB_USERNAME}
+    image: 'spotify/techdocs:<<parameters.tag>>'
+parameters:
+  tag:
+    default: v1.2.0
+    description: >
+      Pick a specific spotify/techdocs image variant:
+      https://hub.docker.com/r/spotify/techdocs/tags
+    type: string

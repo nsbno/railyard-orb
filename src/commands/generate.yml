@@ -1,0 +1,17 @@
+description: >
+  Generate TechDocs
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+parameters:
+  directory:
+    type: string
+    default: .
+    description: "The directory containing mkdocs.yml"
+steps:
+  - checkout
+  - run:
+      command: cd << parameters.directory >> && mkdocs build
+  - persist_to_workspace:
+      paths:
+        - site
+      root: << parameters.directory >>
