@@ -16,9 +16,6 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - railyard/generate-techdocs:
-          techdocs_bucket: 1123123-dummy
-          entity_name: example
 workflows:
   test-deploy:
     jobs:
