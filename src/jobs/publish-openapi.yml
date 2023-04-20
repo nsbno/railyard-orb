@@ -1,0 +1,17 @@
+description: >
+ Upload OpenAPI spec to S3
+
+executor: default
+
+parameters:
+  openapi_bucket:
+    type: string
+    description: Name of the S3 bucket to upload to
+  entity_name:
+    type: string
+    description: Name
+steps:
+  - checkout
+  - upload-openapi-spec:
+      s3_bucket: << parameters.openapi_bucket >>
+      entity_name: << parameters.entity_name >>

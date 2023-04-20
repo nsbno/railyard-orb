@@ -9,5 +9,5 @@ parameters:
     default: .
     description: The directory containing mkdocs.yml
 steps:
-  - generate:
+  - build-techdocs:
       directory: << parameters.directory >>

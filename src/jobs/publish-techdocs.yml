@@ -19,7 +19,7 @@ parameters:
     type: string
     description: Name
 steps:
-  - upload:
+  - upload-techdocs:
       s3_bucket: << parameters.techdocs_bucket >>
       namespace: << parameters.namespace >>
       entity_kind: << parameters.entity_kind >>
