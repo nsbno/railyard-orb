@@ -2,12 +2,13 @@ description: Upload openapi specification site to S3
 parameters:
   s3_bucket:
     type: string
+  file_name:
+    type: string
+    description: The name of the openapi file.
+    default: openapi-definition.yaml
   entity_name:
     type: string
-    description: Name
-    type: string
-    description: the name of the openapi file.
-    default: openapi-definition.yaml
+    description: Name of the service
 steps:
   - attach_workspace:
       at: .
