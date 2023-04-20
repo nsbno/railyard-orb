@@ -16,6 +16,9 @@ parameters:
 steps:
   - attach_workspace:
       at: .
+  - run:
+      name: Debug
+      command: ls -laR
   - s3/sync:
       from: site
       to: >-
