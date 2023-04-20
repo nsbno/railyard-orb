@@ -13,4 +13,5 @@ usage:
       jobs:
         - railyard/generate-techdocs:
             techdocs_bucket: 1234512345-techdocs_bucket
+        - railyard/publish-techdocs:
             entity_name: example
