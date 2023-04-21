@@ -5,15 +5,18 @@ parameters:
     type: string
     default: .
     description: "The directory containing mkdocs.yml"
+  name:
+    type: string
+    name: Name of the component
 steps:
   - checkout
   - run:
       name: Create the railyard folder if it doesn't exist
-      command: mkdir -p railyard
+      command: mkdir -p railyard/default/component/<<parameters.name >>
   - run:
       name: Build mkdocs
       command: cd << parameters.directory >> && mkdocs build -d railyard
   - persist_to_workspace:
-      root: .
+      root: railyard
       paths:
-        - railyard
+        - default
