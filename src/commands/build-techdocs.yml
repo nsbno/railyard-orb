@@ -11,12 +11,15 @@ parameters:
 steps:
   - checkout
   - run:
+      name: Build mkdocs
+      command: cd << parameters.directory >> && mkdocs build
+  - run:
       name: Create the railyard folder if it doesn't exist
       command: mkdir -p railyard/default/component/<<parameters.entity_name >>
   - run:
-      name: Build mkdocs
-      command: cd << parameters.directory >> && mkdocs build -d railyard
+      name: save the new site
+      command: mv site/* railyard/default/component/<<parameters.entity_name >>
   - persist_to_workspace:
       root: railyard
       paths:
-        - default/component/<<parameters.entity_name >>
+        - default
