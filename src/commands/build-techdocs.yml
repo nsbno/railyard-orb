@@ -7,7 +7,7 @@ parameters:
     description: "The directory containing mkdocs.yml"
   name:
     type: string
-    name: Name of the component
+    description: Name of the component
 steps:
   - checkout
   - run:
