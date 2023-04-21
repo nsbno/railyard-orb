@@ -10,6 +10,7 @@ usage:
   workflows:
     build:
       jobs:
-        - railyard/build-techdocs
+        - railyard/build-techdocs:
+          entity_name: example
         - railyard/publish-railyard-data:
             railyard_bucket: 1234512345-railyard_bucket
