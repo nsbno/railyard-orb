@@ -11,6 +11,6 @@ usage:
     build:
       jobs:
         - railyard/build-techdocs:
-          entity_name: example
+            entity_name: example
         - railyard/publish-railyard-data:
             railyard_bucket: 1234512345-railyard_bucket
