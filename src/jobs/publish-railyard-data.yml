@@ -9,4 +9,4 @@ parameters:
     description: Name of the S3 bucket to upload to
 steps:
   - upload-railyard-data:
-      s3_bucket: << parameters.railyard_bucket >>git st
+      s3_bucket: << parameters.railyard_bucket >>
