@@ -4,8 +4,8 @@ parameters:
     type: string
 steps:
   - attach_workspace:
-      at: ./railyard
+      at: .
   - s3/sync:
-      from: .
+      from: railyard
       to: >-
         s3://<< parameters.s3_bucket >>
