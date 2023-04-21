@@ -11,6 +11,6 @@ steps:
       name: Build mkdocs
       command: cd << parameters.directory >> && mkdocs build
   - persist_to_workspace:
+      root: .
       paths:
-        - site
-      root: << parameters.directory >>
+        - railyard

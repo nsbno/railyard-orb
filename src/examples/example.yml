@@ -1,6 +1,5 @@
 description: |
-  A workflow where we build and upload
-  TechDocs to S3
+  A workflow where we build and upload techdocs, OpenApi specs, etc. and upload them to our railyard bucket.
 
 usage:
   version: 2.1
@@ -11,10 +10,6 @@ usage:
   workflows:
     build:
       jobs:
-        - railyard/build-techdocs:
-            techdocs_bucket: 1234512345-railyard_bucket
-        - railyard/publish-techdocs:
-            entity_name: example
-        - railyard/publish-openapi:
-            entity_name: example
-            s3_bucket: 1234512345-railyard_bucket
+        - railyard/build-techdocs
+        - railyard/publish-railyard-data:
+            railyard_bucket: 1234512345-railyard_bucket

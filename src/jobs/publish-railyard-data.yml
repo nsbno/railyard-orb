@@ -1,0 +1,12 @@
+description: >
+  Uploads the files from workspace/railyard to railyard
+
+executor: default
+
+parameters:
+  railyard_bucket:
+    type: string
+    description: Name of the S3 bucket to upload to
+steps:
+  - upload-railyard-data:
+      s3_bucket: << parameters.railyard_bucket >>git st
