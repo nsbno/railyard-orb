@@ -8,11 +8,11 @@ parameters:
 steps:
   - checkout
   - run:
-      name: Build mkdocs
-      command: cd << parameters.directory >> && mkdocs build
+      name: Create the railyard folder if it doesn't exist
+      command: mkdir -p railyard
   - run:
-      name: add them to the railyard repo
-      command: mkdir -p railyard && cp -p << parameters.directory >>/site ./railyard
+      name: Build mkdocs
+      command: cd << parameters.directory >> && mkdocs build -d railyard
   - persist_to_workspace:
       root: .
       paths:
