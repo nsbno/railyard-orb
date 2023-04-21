@@ -19,4 +19,4 @@ steps:
   - persist_to_workspace:
       root: railyard
       paths:
-        - default
+        - default/component/<<parameters.entity_name >>
