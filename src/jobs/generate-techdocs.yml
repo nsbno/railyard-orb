@@ -8,6 +8,10 @@ parameters:
     type: string
     default: .
     description: The directory containing mkdocs.yml
+  entity_name:
+    type: string
+    description: Name of the component
 steps:
   - build-techdocs:
       directory: << parameters.directory >>
+      entity_name: << parameters.entity_name >>
