@@ -12,6 +12,9 @@ usage:
     build:
       jobs:
         - railyard/build-techdocs:
-            techdocs_bucket: 1234512345-techdocs_bucket
+            techdocs_bucket: 1234512345-railyard_bucket
         - railyard/publish-techdocs:
             entity_name: example
+        - railyard/publish-openapi:
+            entity_name: example
+            s3_bucket: 1234512345-railyard_bucket
