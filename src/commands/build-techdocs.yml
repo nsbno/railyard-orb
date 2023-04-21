@@ -12,7 +12,7 @@ steps:
       command: cd << parameters.directory >> && mkdocs build
   - run:
       name: add them to the railyard repo
-      command: mkdir -p railyard && cp -p << parameters.directory >>/site
+      command: mkdir -p railyard && cp -p << parameters.directory >>/site ./railyard
   - persist_to_workspace:
       root: .
       paths:
