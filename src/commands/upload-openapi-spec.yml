@@ -5,13 +5,12 @@ parameters:
   file_name:
     type: string
     description: The name of the openapi file.
-    default: openapi-definition.yaml
   entity_name:
     type: string
     description: Name of the service
 steps:
   - attach_workspace:
-      at: .
+      at: ./backend/build
   - s3/sync:
       from: site
       to: >-
