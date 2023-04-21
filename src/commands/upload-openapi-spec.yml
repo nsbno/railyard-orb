@@ -8,10 +8,11 @@ parameters:
   entity_name:
     type: string
     description: Name of the service
+
 steps:
   - attach_workspace:
-      at: ./backend/build
+      at: .
   - s3/sync:
-      from: site
+      from: build/generated/<< parameters.file_name >>
       to: >-
         s3://<< parameters.s3_bucket >>/openapi/<< parameters.entity_name >>/<< parameters.file_name >>
