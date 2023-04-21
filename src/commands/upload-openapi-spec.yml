@@ -12,7 +12,7 @@ parameters:
 steps:
   - attach_workspace:
       at: .
-  - s3/sync:
+  - s3/copy:
       from: build/generated/<< parameters.file_name >>
       to: >-
         s3://<< parameters.s3_bucket >>/openapi/<< parameters.entity_name >>/<< parameters.file_name >>
