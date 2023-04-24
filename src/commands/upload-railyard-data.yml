@@ -5,6 +5,9 @@ parameters:
 steps:
   - attach_workspace:
       at: .
+  - run:
+      name: ls workspace
+      command : ls -al
   - s3/sync:
       from: railyard
       to: >-
