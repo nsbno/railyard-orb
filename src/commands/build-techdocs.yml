@@ -20,6 +20,6 @@ steps:
       name: save the new site
       command: mv site/* railyard/default/component/<<parameters.entity_name >>
   - persist_to_workspace:
-      root: railyard
+      root: .
       paths:
-        - default
+        - railyard
