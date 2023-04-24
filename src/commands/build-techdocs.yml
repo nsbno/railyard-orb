@@ -1,0 +1,25 @@
+description: >
+  Builds TechDocs
+parameters:
+  directory:
+    type: string
+    default: .
+    description: "The directory containing mkdocs.yml"
+  entity_name:
+    type: string
+    description: Name of the component
+steps:
+  - checkout
+  - run:
+      name: Build mkdocs
+      command: cd << parameters.directory >> && mkdocs build
+  - run:
+      name: Create the railyard folder if it doesn't exist
+      command: mkdir -p railyard/default/component/<<parameters.entity_name >>
+  - run:
+      name: save the new site
+      command: mv site/* railyard/default/component/<<parameters.entity_name >>
+  - persist_to_workspace:
+      root: .
+      paths:
+        - railyard
