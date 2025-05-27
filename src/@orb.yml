@@ -11,5 +11,4 @@ display:
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 orbs:
-  s3: circleci/aws-s3@4.1.1
-  
+  s3: circleci/aws-s3@3.1.1  
